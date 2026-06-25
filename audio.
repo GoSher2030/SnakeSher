@@ -1,0 +1,3 @@
+<audio id="menuMusic" loop>
+  <source src="https://example.com/menu.mp3" type="audio/mpeg">
+</audio>
