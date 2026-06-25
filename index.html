@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnakeSher</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="particles"></div>
+
+    <!-- MENU -->
+    <div id="menu-screen" class="screen">
+
+        <div class="menu-container">
+
+            <div class="snake-box">
+
+                <svg id="snakeMascot" width="220" height="220" viewBox="0 0 220 220">
+
+                    <path
+                        class="snake-body"
+                        d="M60 170
+                        C40 120 70 90 110 100
+                        C150 110 180 80 160 50
+                        C140 20 90 20 80 60"
+                    />
+
+                    <circle class="snake-head" cx="82" cy="60" r="26"/>
+
+                    <ellipse id="leftEye" cx="75" cy="55" rx="4" ry="7"/>
+                    <ellipse id="rightEye" cx="90" cy="55" rx="4" ry="7"/>
+
+                    <circle cx="74" cy="54" r="1.5" fill="#fff"/>
+                    <circle cx="89" cy="54" r="1.5" fill="#fff"/>
+
+                    <path
+                        class="tongue"
+                        d="M82 75 L82 95
+                        M82 95 L75 105
+                        M82 95 L89 105"
+                    />
+
+                </svg>
+
+            </div>
+
+            <div class="menu-content">
+
+                <h1 class="logo">
+                    SnakeSher
+                </h1>
+
+                <button id="startBtn" class="menu-btn">
+                    ВОЙТИ В ИГРУ
+                </button>
+
+                <div class="record-box">
+                    🍎 Рекорд:
+                    <span id="bestScore">0</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- GAME -->
+    <div id="game-screen" class="hidden">
+
+        <div class="top-bar">
+
+            <div class="score-box">
+                🍎 Очки:
+                <span id="score">0</span>
+            </div>
+
+        </div>
+
+        <canvas id="gameCanvas" width="600" height="600"></canvas>
+
+    </div>
+
+    <!-- GAME OVER -->
+    <div id="game-over-screen" class="hidden">
+
+        <div class="game-over-box">
+
+            <h2>Игра окончена</h2>
+
+            <p>
+                Собрано яблок:
+                <span id="finalScore">0</span>
+            </p>
+
+            <button id="restartBtn" class="menu-btn">
+                Играть ещё раз
+            </button>
+
+            <button id="menuBtn" class="menu-btn secondary">
+                В меню
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- AUDIO -->
+
+    <audio
+        id="menuMusic"
+        loop
+    >
+        <source src="audio/menu.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio
+        id="gameMusic"
+        loop
+    >
+        <source src="audio/game.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="eatSound">
+        <source src="audio/eat.wav" type="audio/wav">
+    </audio>
+
+    <audio id="loseSound">
+        <source src="audio/lose.wav" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
