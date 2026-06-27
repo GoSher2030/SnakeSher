@@ -162,4 +162,42 @@ canvas {
 .game-over-box p {
     font-size: 18px;
     margin-bottom: 20px;
+    #snakeMascot {
+    animation: snakeFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 15px #00ff66);
+}
+
+@keyframes snakeFloat {
+
+    0% {
+        transform: translateY(0px) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(-2deg);
+    }
+
+}
+
+.tongue {
+
+    animation: tongueMove 1.2s infinite;
+
+}
+
+@keyframes tongueMove {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(4px);
+    }
+
+
 }
